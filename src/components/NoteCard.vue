@@ -1,7 +1,7 @@
 <script setup>
 import { Clock, Edit3 } from 'lucide-vue-next'
 
-const props = defineProps({
+defineProps({
   note: {
     type: Object,
     required: true,

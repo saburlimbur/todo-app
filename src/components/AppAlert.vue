@@ -11,6 +11,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  visible: {
+    type: Boolean,
+    default: true,
+  },
 })
 
 const icon = computed(() => {
@@ -41,8 +45,9 @@ const alertStyle = computed(() => {
 </script>
 
 <template>
-  <transition name="slide-fade">
+  <transition name="fade">
     <div
+      v-if="visible"
       class="fixed top-6 right-6 z-50 flex items-center gap-3 px-5 py-3 border-4 rounded-lg shadow-[4px_4px_0px_#000] font-semibold text-black"
       :class="alertStyle"
     >

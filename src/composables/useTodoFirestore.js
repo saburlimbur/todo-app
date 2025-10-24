@@ -43,7 +43,7 @@ export function useTodoFirestore() {
     }
   }
 
-  const createTodoFirestore = async (title, description, createdAt, updatedAt) => {
+  const createTodoFirestore = async (title, description) => {
     loading.value = true
 
     if (!title?.trim() || !description?.trim()) {
@@ -59,7 +59,6 @@ export function useTodoFirestore() {
         title,
         description,
         createdAt: serverTimestamp(),
-        // updatedAt: serverTimestamp(),
       })
 
       await getTodoFirestore()

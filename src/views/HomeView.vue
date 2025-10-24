@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue'
 import { useTodoFirestore } from '../composables/useTodoFirestore'
 import NoteCard from '@/components/NoteCard.vue'
 import NoteForm from '@/components/NoteForm.vue'
-import Alert from '@/components/Alert.vue'
+import AppAlert from '@/components/AppAlert.vue'
 import { useAlert } from '@/composables/useAlert'
 
 const {
@@ -79,6 +79,6 @@ onMounted(async () => {
       />
     </div>
 
-    <Alert v-if="alert.visible" :type="alert.type" :message="alert.message" />
+    <AppAlert v-if="alert.visible" :type="alert.type" :message="alert.message" />
   </main>
 </template>
